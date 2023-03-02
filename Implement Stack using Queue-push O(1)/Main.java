@@ -39,5 +39,6 @@ public class Main {
             }
             q--;
         }	
+        sc.close();
     }
 }

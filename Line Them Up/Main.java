@@ -1,9 +1,6 @@
 import java.util.*;
-import java.io.*;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set; 
+import java.util.Scanner; 
 class Solution{
     static String solve(String [] a){
         //Write your code here

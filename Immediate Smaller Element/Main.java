@@ -1,37 +1,31 @@
 import java.util.*;
-
+import java.io.*;
 class Solution {
+    /**
+     * @param arr
+     * @param n
+     */
     public void ImmediateSmaller(int[] arr, int n) {
         // Write your code here
-               int res[]=new int[n];
-          for(int i=0;i<n;i++)
-        {
-            if(i==n-1)
-            {
-                res[i]=-1;
-                break;
-            }
-            int m=0;
-            Stack<Integer> st=new Stack<>();
-            st.push(arr[i]);
-            for(int j=i+1;j<n-1;j++)
-            {
-                if(st.peek()>arr[j])
-                {
-                    res[i]=arr[j];
-                    st.pop();
-                   // m=j;
-                    break;
-                }
-                else
-                m=j;
-              
-            }
-            if(st.peek()<arr[n-1])
-                res[i]=-1;
-        }
+        Stack<Integer> st= new Stack<>();
+        int res[]=new int[n];
+        st.push(arr[0]);
         for(int i=0;i<n;i++)
-        System.out.print(res[i]+" ");
+        { int m=i+1;
+            if(st.peek()>arr[m]&&m<(n-1))
+            {
+                st.pop();
+                res[i]=arr[m];
+                st.push(arr[m]);
+            }
+            else if(m<=n-1)
+            {
+                m++;
+            }
+            else{
+                res[i]=-1;
+            }
+        }
     }
 }
 
@@ -46,5 +40,6 @@ public class Main {
 
         Solution Obj = new Solution();
         Obj.ImmediateSmaller(arr, n);
+        //input.close();
     }
 }

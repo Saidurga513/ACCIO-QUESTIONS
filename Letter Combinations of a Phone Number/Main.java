@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) throws Throwable {
         Scanner sc = new Scanner(System.in);
         String digits = sc.nextLine();
+        sc.close();
         if(digits.isEmpty()){
             System.out.println("");
         }
