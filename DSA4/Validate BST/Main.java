@@ -70,16 +70,20 @@ class Main {
   
 }
 
-class Solution{
-	public static class Pair{
+class Solution
+{
+	public static class Pair
+    {
 		Node node;
 		int state;
-		Pair(Node node,int state){
+		Pair(Node node,int state)
+        {
 			this.node = node;
 			this.state = state;
 		}
 	}
-	public static Node getNextInorder(Stack<Pair> st){
+	public static Node getNextInorder(Stack<Pair> st)
+    {
 		while(st.size()>0){
 			Pair top = st.peek();
 			if(top.state == 1){//pre
@@ -96,7 +100,8 @@ class Solution{
 		return null;
 	}
 	
-    boolean isBST(Node node){
+    boolean isBST(Node node)
+    {
        // Your Code Here
 		Stack<Pair> st = new Stack<>();
 		st.push(new Pair(node,1));
@@ -105,12 +110,15 @@ class Solution{
 		Node curr  = getNextInorder(st);//
 		Node prev = null;
 
-		while(curr != null){
-			if(prev == null || curr.data >= prev.data){
+		while(curr != null)
+        {
+			if(prev == null || curr.data >= prev.data)
+            {
 				prev = curr;
 				curr = getNextInorder(st);
 			}
-			else{
+			else
+            {
 				return false;
 			}
 		
